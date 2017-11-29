@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$#" -gt 0 ]
+then
+  exec ssh "root@$@"
+else
+  echo "No arguments supplied."
+fi
+exit 0
