@@ -1,7 +1,12 @@
 #!/bin/bash
 if [ "$#" -gt 0 ]
 then
-  exec ssh "root@$@"
+  if [[ "$@" == *@* ]]
+  then
+    exec ssh "$@"
+  else
+    exec ssh "root@$@"
+  fi
 else
   echo "No arguments supplied."
 fi
