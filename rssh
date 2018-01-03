@@ -1,11 +1,11 @@
 #!/bin/bash
-if [ "$#" -gt 0 ]
+if [[ $# -gt 0 ]]
 then
-  if [[ "$@" == *@* ]]
+  if [[ $@ == *@* ]]
   then
-    exec ssh "$@"
+    exec ssh $@
   else
-    exec ssh "root@$@"
+    exec ssh root@$@
   fi
 else
   echo "No arguments supplied."
